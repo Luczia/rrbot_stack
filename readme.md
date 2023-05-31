@@ -16,17 +16,17 @@ This project has been organized in stacks for better modularity and reusability
   
 ```
 	├──rrbot_description/ 				#contains the urdf description and and assets for robot representation in sims and ROS
-  	│	├──launch/
-  	│	├──meshes/ 				#contains the stl files for acurate rendering
   	│	└──urdf/				#contains the URDF description files of the rrbot_robot
   	├──rrbot_gazebo/ 				#contains the aditional elements for Gazebo simulation
   	│	├──worlds/ 				#basic Gazebo worlds for demonstrations
   	│	└──launch/
-	│		└──rrrbot_z_sim.launch		#spawn the rrbot_robot in Gazebo simulation (ex Ignition)
+	│		└──rrrbot_gz_sim.launch.py		#spawn the rrbot_robot in Gazebo simulation 
   	├──rrbot_control/ 				#ros controllers for robot operation in the ROS eco-system
 	│	├──rrbot_control/			#variouses nodes
-  	│	├──config/
-  	│	└──launch/
+  	│	├──config/				# Ros control configs and targets
+  	│	└──launch/ 
+	│		└──test_forward_position_controller.launch.py		#generates various joint angle targets
+	│		└──rrbot_base.launch.py		#spawn the robot in rviz and gazebo with various parameters
   	├──media/  					#miscelaneous material : videos, tutos, etc...
 ```
 
@@ -54,14 +54,14 @@ Make sure you have the necessary dependencies by typing in the terminal :
 2. Open a terminal in your catkin_ws:  
 	`colcon build`
 	
-3. Launch the demo for RViz:  
-	`ros2 launch rrbot_control rrbot_base.launch.py` 
+3. Launch the full demo:
+`ros2 launch rrbot_bringup rrbot_bringup.launch.py`
 
-4. In another terminal, launch the joints angle publisher :
-	`ros2 launch rrbot_control test_forward_position_controller.launch.py` 
+For your reference, the bringup file calls for : `rrbot_base.launch.py`  and
+`test_forward_position_controller.launch.py` 
 
 
-You should have Gazebo Sim and rviz windows running and see the arm move every 2 seconds.
+At this point, tou should have Gazebo Sim and rviz windows running and see the arm move every 2 seconds.
 	
 	
 ### ROS Graph
