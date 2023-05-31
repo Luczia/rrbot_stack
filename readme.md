@@ -1,11 +1,13 @@
 # Stack "rrbot_stack"
 
-This is the stack for the RRBot robot with joint control in Gazebo and visualization in Rviz
+This is the stack for the RRBot robot with joint control in Gazebo and visualization in Rviz.
+Basically, this is simple demonstration of using RRBot with Gazebo Sim and ros_controlers (gz_sim_ros_control).
 
+It is based on examples in [ros2_control_demos](https://github.com/ros-controls/ros2_control_demos/tree/master) and [ros_gz_sim_demos](https://index.ros.org/p/ros_gz_sim_demos/#rolling).
 
 ## Demonstration
 
-![Demo of Robot](media/demo.png)
+![Demo of Robot](media/demo.gif)
 
 
 ## Repository Structure
@@ -35,12 +37,12 @@ This project has been organized in stacks for better modularity and reusability
 
 * Option A : Deploy on your Linux (Ubuntu 22.04 recommended)
 
-[Install ROS2](https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debians.html), in version **Full-Desktop**, install Gazebo and configure your [work environment](https://docs.ros.org/en/humble/Tutorials/Configuring-ROS2-Environment.html)  
-(This code has been tested on ROS2 Humble, Gazebo Classic 11 and Gazebo (ex Ignition) Garden. Several other branch (ros1 and ros Galactic exist with EoL support).
+[Install ROS2](https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debians.html), in version **Full-Desktop**, install Gazebo Sim and configure your [work environment](https://docs.ros.org/en/humble/Tutorials/Configuring-ROS2-Environment.html)  
+(This code has been tested on ROS2 Rolling  and Gazebo Sim (ex Ignition) Fortress..
 
 Make sure you have the necessary dependencies by typing in the terminal :  
 	```
-	sudo apt install ros-humble-xacro -y; sudo apt install ros-humble-joint-state-publisher-gui -y; sudo apt install ros-humble-ros2-control -y; sudo apt install ros-humble-ros2-controllers -y; sudo apt install ros-humble-gazebo-ros2-control -y
+	sudo apt install ros-rolling-ros2-controllers-test-nodes
 	```
 
 
@@ -59,11 +61,11 @@ Make sure you have the necessary dependencies by typing in the terminal :
 	`ros2 launch rrbot_control test_forward_position_controller.launch.py` 
 
 
-
+You should have Gazebo Sim and rviz windows running and see the arm move every 2 seconds.
 	
 	
-
-
+### ROS Graph
+![ROS_Graph](media/rosgraph.png)
 
 ## Troubleshoot
 
@@ -92,4 +94,4 @@ sudo apt install ros-humble-joint-state-publisher
 
 ## License
 
-Tbd
+MIT
