@@ -1,0 +1,134 @@
+# Clock
+- ros_topic_name: "/clock"
+  gz_topic_name: "/clock"
+  ros_type_name: "rosgraph_msgs/msg/Clock"
+  gz_type_name: "gz.msgs.Clock"
+  direction: GZ_TO_ROS
+
+# IMU
+- ros_topic_name: "/imu"
+  gz_topic_name: "/imu"
+  ros_type_name: "sensor_msgs/msg/Imu"
+  gz_type_name: "gz.msgs.IMU"
+  direction: GZ_TO_ROS
+
+
+# LaserScan
+- ros_topic_name: "lidar"
+  gz_topic_name: "lidar"
+  ros_type_name: "sensor_msgs/msg/LaserScan"
+  gz_type_name: "gz.msgs.LaserScan"
+  direction: GZ_TO_ROS
+- ros_topic_name: "/lidar/points"
+  gz_topic_name: "/lidar/points"
+  ros_type_name: "sensor_msgs/msg/PointCloud2"
+  gz_type_name: "gz.msgs.PointCloudPacked"
+  direction: GZ_TO_ROS
+
+
+  #Camera
+- ros_topic_name: "/top_camera/image"
+  gz_topic_name: "/top_camera"
+  ros_type_name: "sensor_msgs/msg/Image"
+  gz_type_name: "gz.msgs.Image"
+  direction: GZ_TO_ROS
+# - ros_topic_name: "/front_camera/image"
+#   gz_topic_name: "/front_camera"
+#   ros_type_name: "sensor_msgs/msg/Image"
+#   gz_type_name: "gz.msgs.Image"
+#   direction: GZ_TO_ROS
+# - ros_topic_name: "/camera_info"
+#   gz_topic_name: "/camera_info"
+#   ros_type_name: "sensor_msgs/msg/CameraInfo"
+#   gz_type_name: "gz.msgs.CameraInfo"
+#   direction: GZ_TO_ROS
+ 
+  # Depth Camera
+# - ros_topic_name: "/depth_camera"
+#   gz_topic_name: "/depth_camera"
+#   ros_type_name: "sensor_msgs/msg/Image"
+#   gz_type_name: "gz.msgs.Image"
+#   direction: GZ_TO_ROS
+
+  # RGBD
+- ros_topic_name: "/front_rgbd_camera/image"
+  gz_topic_name: "/front_rgbd_camera/image"
+  ros_type_name: "sensor_msgs/msg/Image"
+  gz_type_name: "gz.msgs.Image"
+  direction: GZ_TO_ROS
+- ros_topic_name: "/front_rgbd_camera/depth_image"
+  gz_topic_name: "/front_rgbd_camera/depth_image"
+  ros_type_name: "sensor_msgs/msg/Image"
+  gz_type_name: "gz.msgs.Image"
+  direction: GZ_TO_ROS
+- ros_topic_name: "/front_rgbd_camera/points"
+  gz_topic_name: "/front_rgbd_camera/points"
+  ros_type_name: "sensor_msgs/msg/PointCloud2"
+  gz_type_name: "gz.msgs.PointCloudPacked"
+  direction: GZ_TO_ROS
+
+  # Twist && Odometry
+- ros_topic_name: "cmd_vel"
+  gz_topic_name: "cmd_vel"
+  ros_type_name: "geometry_msgs/msg/Twist"
+  gz_type_name: "gz.msgs.Twist"
+  direction: ROS_TO_GZ
+
+# - ros_topic_name: "odometry"
+#   gz_topic_name: "odometry"
+#   ros_type_name: "nav_msgs/msg/Odometry"
+#   gz_type_name: "gz.msgs.Odometry"
+#   direction: GZ_TO_ROS
+  
+
+  # # Clock (IGN -> ROS2)
+  #               '/clock@rosgraph_msgs/msg/Clock[ignition.msgs.Clock',
+  #               # Joint states (IGN -> ROS2)
+  #               '/world/actors/model/rrbot/joint_state@sensor_msgs/msg/JointState[ignition.msgs.Model',
+  #               #Camera
+  #               '/camera@sensor_msgs/msg/Image@gz.msgs.Image',
+  #               '/camera_info@sensor_msgs/msg/CameraInfo@gz.msgs.CameraInfo',
+  #               # Depth Camera
+  #               '/depth_camera@sensor_msgs/msg/Image@gz.msgs.Image',
+  #               #RGBD
+  #               '/front_rgbd_camera/image@sensor_msgs/msg/Image@gz.msgs.Image',
+  #               '/front_rgbd_camera/depth_image@sensor_msgs/msg/Image@gz.msgs.Image',
+  #               '/front_rgbd_camera/points@sensor_msgs/msg/PointCloud2@gz.msgs.PointCloudPacked',
+  #               # GPU Lidar
+  #               'lidar@sensor_msgs/msg/LaserScan@gz.msgs.LaserScan',
+  #               '/lidar/points@sensor_msgs/msg/PointCloud2@gz.msgs.PointCloudPacked',
+  #               #IMU
+  #               '/imu@sensor_msgs/msg/Imu@gz.msgs.IMU',
+
+#  # Set just topic name, applies to both
+# - topic_name: "chatter"
+#   ros_type_name: "std_msgs/msg/String"
+#   gz_type_name: "ignition.msgs.StringMsg"
+
+# # Set just ROS topic name, applies to both
+# - ros_topic_name: "chatter_ros"
+#   ros_type_name: "std_msgs/msg/String"
+#   gz_type_name: "ignition.msgs.StringMsg"
+
+# # Set just GZ topic name, applies to both
+# - gz_topic_name: "chatter_ign"
+#   ros_type_name: "std_msgs/msg/String"
+#   gz_type_name: "ignition.msgs.StringMsg"
+
+# # Set each topic name explicitly
+# - ros_topic_name: "chatter_both_ros"
+#   gz_topic_name: "chatter_both_ign"
+#   ros_type_name: "std_msgs/msg/String"
+#   gz_type_name: "ignition.msgs.StringMsg"
+
+# # Full set of configurations
+# - ros_topic_name: "ros_chatter"
+#   gz_topic_name: "ign_chatter"
+#   ros_type_name: "std_msgs/msg/String"
+#   gz_type_name: "ignition.msgs.StringMsg"
+#   subscriber_queue: 5       # Default 10
+#   publisher_queue: 6        # Default 10
+#   lazy: true                # Default "false"
+#   direction: BIDIRECTIONAL  # Default "BIDIRECTIONAL" - Bridge both directions
+#                             # "GZ_TO_ROS" - Bridge Ignition topic to ROS
+#                             # "ROS_TO_GZ" - Bridge ROS topic to Ignition

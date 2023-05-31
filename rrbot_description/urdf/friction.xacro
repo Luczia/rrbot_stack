@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+
+<robot name="rrbot" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+  
+  <!-- Gazebo colors and frictions -->
+  <!-- Link1 -->
+  <gazebo reference="link1">
+    <material>
+      <diffuse> 1 0.423529412 0.039215686 1</diffuse>
+      <ambient> 1 0.423529412 0.039215686 1</ambient>
+      <specular>1 0.423529412 0.039215686 1</specular>
+    </material>
+  </gazebo>
+
+  <!-- Link2 -->
+  <gazebo reference="link2">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>
+      <diffuse> 0 0 0 1</diffuse>
+      <ambient> 0 0 0 1</ambient>
+      <specular>0 0 0 1</specular>
+    </material>
+  </gazebo>
+
+  <!-- Link3 -->
+  <gazebo reference="link3">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>
+      <diffuse> 1 0.423529412 0.039215686 1</diffuse>
+      <ambient> 1 0.423529412 0.039215686 1</ambient>
+      <specular>1 0.423529412 0.039215686 1</specular>
+    </material>
+  </gazebo>
+</robot>
